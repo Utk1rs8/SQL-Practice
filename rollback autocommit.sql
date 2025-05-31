@@ -1,0 +1,13 @@
+create database db89;
+use db89;
+create table car_model(Model_name varchar(30),release_year year);
+insert into car_model(Model_name,release_year) values("orange",2020),("batcar",2020);
+select * from Car_model;
+set autocommit = off;
+set sql_safe_updates = 0;
+delete from car_model;
+rollback;
+commit;
+select * from  car_model;
+drop table car_model;
+alter table car_model add column email varchar(30) after Model_name;
